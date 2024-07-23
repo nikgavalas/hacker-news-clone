@@ -1,0 +1,45 @@
+{
+  "React Component": {
+    "scope": "typescriptreact",
+    "prefix": "component",
+    "body": [
+      "import clsx from 'clsx';",
+      "",
+      "interface $0Props {",
+      "  className?: string;",
+      "}",
+      "",
+      "/**",
+      " * @description tbd...",
+      " */",
+      "export function $0(props: $0Props) {",
+      "  const { className } = props",
+      "",
+      "  return (",
+      "    <div className={clsx('', className)}>",
+      "      <h1>$0</h1>",
+      "    </div>",
+      "  );",
+      "}"
+    ]
+  },
+  "Function with Comment": {
+    "prefix": ["fun", "function"],
+    "body": [
+      "/**",
+      " * tbd...",
+      " */",
+      "function ${1:name}() {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Function with comment"
+  },
+  "Clsx": {
+    "prefix": "clsx",
+    "body": [
+      "className={clsx('', className)}",
+    ],
+    "description": "Clsx"
+  },
+}
