@@ -22,7 +22,7 @@ export function StoryItem(props: StoryItemProps) {
         {index + 1}.
       </div>
       <div className="flex flex-col gap-2">
-        <div className="flex flex-row gap-2 items-center">
+        <div className="flex flex-col sm:flex-row gap-2 items-start sm:items-center">
           <div className="font-bold font-mono text-lg text-default-foreground">
             {story.title}
           </div>
@@ -30,11 +30,11 @@ export function StoryItem(props: StoryItemProps) {
             ({story.domain})
           </div>
         </div>
-        <div className="flex flex-row gap-2 text-default-foreground/50 text-xs">
+        <div className="flex flex-col sm:flex-row gap-2 text-default-foreground/50 text-xs">
           <div>{storyInfo}</div>
-          <div>|</div>
+          <div className="hidden sm:flex">|</div>
           <div>{comments_count} comments</div>
-          <div>|</div>
+          <div className="hidden sm:flex">|</div>
           <div>saved</div>
         </div>
       </div>

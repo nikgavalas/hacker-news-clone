@@ -23,7 +23,7 @@ export function StoryList(props: StoryListProps) {
           <StoryItem key={story.id} story={story} index={index} />
         ))}
       </div>
-      <div className="ml-12 mb-8">
+      <div className="ml-14 mb-8">
         <Button color="primary" radius="none" onPress={fetchMore}>
           show more
         </Button>
