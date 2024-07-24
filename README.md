@@ -25,3 +25,12 @@ npm install
 ```bash
 npm run dev
 ```
+
+# Tech
+
+## State management
+
+I used recoil for state management. Recoil is a new state management library
+from Facebook that is similar to redux but with a simpler API. All the state 
+is persisted in local storage so that the user can refresh the page and the
+state will be preserved.
