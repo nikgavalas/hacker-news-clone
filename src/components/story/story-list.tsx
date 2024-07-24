@@ -17,18 +17,15 @@ export function StoryList(props: StoryListProps) {
 
   const { fetchMore, stories } = useStories();
   return (
-    <div className={clsx('', className)}>
-      <div>
+    <div className={clsx('flex flex-col gap-10', className)}>
+      <div className="flex flex-col gap-6">
         {stories.map((story, index) => (
-          <div className="flex flex-row" key={story.id}>
-            <div>{index + 1}.</div>
-            <StoryItem story={story} />
-          </div>
+          <StoryItem key={story.id} story={story} index={index} />
         ))}
       </div>
-      <div>
-        <Button color="primary" onPress={fetchMore}>
-          Fetch More
+      <div className="ml-14 mb-8">
+        <Button color="primary" radius="none" onPress={fetchMore}>
+          show more
         </Button>
       </div>
     </div>
