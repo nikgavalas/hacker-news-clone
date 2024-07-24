@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+import { StarFilledIcon, StarUnFilledIcon } from '@/components/icons';
 
 interface StorySavedProps {
   className?: string;
@@ -9,11 +10,18 @@ interface StorySavedProps {
  */
 export function StorySaved(props: StorySavedProps) {
   const { className } = props;
-  asdf;
+
+  const isSaved = true;
 
   return (
-    <div className={clsx('', className)}>
-      <h1>StorySaved</h1>
+    <div
+      className={clsx(
+        'flex flex-row gap-1 items-center hover:cursor-pointer',
+        className,
+      )}
+    >
+      {isSaved ? <StarFilledIcon size={14} /> : <StarUnFilledIcon size={14} />}
+      {isSaved ? 'saved' : 'save'}
     </div>
   );
 }
