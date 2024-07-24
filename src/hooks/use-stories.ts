@@ -20,7 +20,7 @@ export type Story = {
  */
 export default function useStories() {
   const [stories, setStories] = useState<Story[]>([]);
-  const [page, setPage] = useState(0);
+  const [page, setPage] = useState(1);
 
   useEffect(() => {
     async function fetchStories() {
@@ -28,6 +28,7 @@ export default function useStories() {
         `https://api.hnpwa.com/v0/news/${page}.json`,
       );
       const data = await response.json();
+      console.log('data', data);
       setStories((s) => [...s, ...data]);
     }
 
