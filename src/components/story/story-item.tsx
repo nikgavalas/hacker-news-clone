@@ -1,6 +1,6 @@
 import clsx from 'clsx';
-import { StorySaved } from '@/components/story/story-saved';
-import { Story } from '@/hooks/use-stories';
+import { Story } from '@/app/types';
+import { StoryStarred } from '@/components/story/story-starred';
 
 interface StoryItemProps {
   className?: string;
@@ -36,7 +36,7 @@ export function StoryItem(props: StoryItemProps) {
           <div className="hidden sm:flex">|</div>
           <div>{comments_count} comments</div>
           <div className="hidden sm:flex">|</div>
-          <StorySaved />
+          <StoryStarred story={story} />
         </div>
       </div>
     </div>
