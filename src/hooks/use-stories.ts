@@ -28,7 +28,7 @@ export default function useStories() {
         `https://api.hnpwa.com/v0/news/${page}.json`,
       );
       const data = await response.json();
-      console.log('data', data);
+
       setStories((s) => [...s, ...data]);
     }
 
