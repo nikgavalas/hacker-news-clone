@@ -19,7 +19,7 @@ export function StoryItem(props: StoryItemProps) {
 
   return (
     <div className={clsx('flex flex-row gap-4', className)}>
-      <div className="font-mono text-lg text-default-foreground/50">
+      <div className="flex-shrink-0 w-8 text-left font-mono text-lg text-default-foreground/50">
         {index + 1}.
       </div>
       <div className="flex flex-col gap-2">

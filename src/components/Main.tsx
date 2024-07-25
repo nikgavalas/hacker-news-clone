@@ -1,8 +1,8 @@
 'use client';
 
 import clsx from 'clsx';
-import { Footer } from '@/components/Footer';
-import { NavBar } from '@/components/NavBar';
+import { Footer } from '@/components/footer';
+import { NavBar } from '@/components/navbar/navbar';
 import { useMenuOptionStarred } from '@/hooks/use-menu-option-starred';
 
 interface MainProps {

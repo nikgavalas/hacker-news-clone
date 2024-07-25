@@ -23,7 +23,7 @@ export function NavBarMenuItems(_props: NavBarMenuItemsProps) {
           latest
         </Link>
       </NavbarItem>
-      {' | '}
+      <div>|</div>
       <NavbarItem isActive={isStarredSelected ? true : false}>
         <Link
           color={isStarredSelected ? 'primary' : 'foreground'}

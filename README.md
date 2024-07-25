@@ -34,3 +34,11 @@ I used recoil for state management. Recoil is a new state management library
 from Facebook that is similar to redux but with a simpler API. All the state 
 is persisted in local storage so that the user can refresh the page and the
 state will be preserved.
+
+## A note about file casing
+
+I use kebab-case for all file names. This is a personal preference because when
+it comes to page names, I find they are kebab-case in the URL so it makes sense
+to have the file names in kebab-case as well. Most React projects use PascalCase
+for the file names but then it's inconsistent. So I just use kebab-case for all
+file names for consistency.
