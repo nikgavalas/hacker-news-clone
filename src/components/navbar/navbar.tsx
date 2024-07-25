@@ -5,8 +5,8 @@ import {
   NavbarItem,
 } from '@nextui-org/navbar';
 import NextLink from 'next/link';
-import { Logo } from '@/components/Logo';
-import { NavBarMenuItems } from '@/components/NavBarMenuItems';
+import { Logo } from '@/components/logo';
+import { NavBarMenuItems } from '@/components/navbar/navbar-menu-items';
 import { ThemeSwitch } from '@/components/theme-switch';
 
 interface NavBarProps {}
