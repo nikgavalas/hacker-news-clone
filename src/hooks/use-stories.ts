@@ -12,8 +12,12 @@ export default function useStories() {
 
   useEffect(() => {
     async function fetchStories() {
+      // We will only fetch a max of 11 pages. From trial and error, it seems that
+      // the Hacker News api doesn't return anything after page 11.
+      const pageToFetch = Math.min(page, 11);
+
       const response = await fetch(
-        `https://api.hnpwa.com/v0/news/${page}.json`,
+        `https://api.hnpwa.com/v0/news/${pageToFetch}.json`,
       );
       const data = await response.json();
 
@@ -25,6 +29,7 @@ export default function useStories() {
 
   return {
     fetchMore: () => setPage(page + 1),
+    hasMore: page < 11,
     stories,
   };
 }
