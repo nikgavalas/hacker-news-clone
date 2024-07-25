@@ -1,8 +1,9 @@
 import { atom } from 'recoil';
 
-// Define a Recoil atom for the isStarredSelected state
+/**
+ * Atom to store if we have selected to view the starred stories.
+ */
 export const isStarredSelectedState = atom<boolean>({
-  // Unique ID (with respect to other atoms/selectors)
   default: false,
-  key: 'isStarredSelectedState', // Default value (aka initial value)
+  key: 'isStarredSelectedState',
 });

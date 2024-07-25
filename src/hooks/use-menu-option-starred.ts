@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 import { useRecoilState } from 'recoil';
-import { isStarredSelectedState } from '@/recoil/starred-selected'; // Adjust the path as necessary
+import { isStarredSelectedState } from '@/recoil/starred-selected';
 
 /**
  * Hook to manage the state of the "starred" menu item selection.

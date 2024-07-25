@@ -1,9 +1,10 @@
-// recoil/atoms.js
 import { atom } from 'recoil';
 import { Story } from '@/app/types';
 
+/**
+ * Atom to store the map of starred stories.
+ */
 export const starredStoriesState = atom<Record<string, Story>>({
-  // Unique ID (with respect to other atoms/selectors)
   default: {},
-  key: 'starredStoriesState', // Default value (aka initial value)
+  key: 'starredStoriesState',
 });
