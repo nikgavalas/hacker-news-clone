@@ -1,4 +1,4 @@
 export const LOCAL_STORAGE_KEY = {
-  OPENED_ARTICLES: 'openedArticles',
+  READ_STORIES: 'readStories',
   STARRED_STORIES: 'starredStories',
 };
