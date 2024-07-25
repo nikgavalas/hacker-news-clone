@@ -1,3 +1,4 @@
+import { Link } from '@nextui-org/link';
 import clsx from 'clsx';
 import { Story } from '@/app/types';
 import { StoryStarred } from '@/components/story/story-starred';
@@ -24,9 +25,11 @@ export function StoryItem(props: StoryItemProps) {
       </div>
       <div className="flex flex-col gap-2">
         <div className="flex flex-col sm:flex-row gap-2 items-start sm:items-center">
-          <div className="font-bold font-mono text-lg text-default-foreground">
-            {story.title}
-          </div>
+          <Link href={story.url} target="_blank" rel="noopener noreferrer">
+            <div className="font-bold font-mono text-lg text-default-foreground">
+              {story.title}
+            </div>
+          </Link>
           <div className="text-default-foreground/50 text-xs">
             ({story.domain})
           </div>
