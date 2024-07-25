@@ -53,3 +53,9 @@ I like using one testing library for everything so there is less setup and
 configuration to worry about. I find that using one testing library for
 everything makes it easier to get started with testing and requires less context
 switching.
+
+To open the test runner:
+
+```bash
+npm run cypress:open
+```
