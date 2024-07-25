@@ -42,3 +42,20 @@ it comes to page names, I find they are kebab-case in the URL so it makes sense
 to have the file names in kebab-case as well. Most React projects use PascalCase
 for the file names but then it's inconsistent. So I just use kebab-case for all
 file names for consistency.
+
+## Testing
+
+I use Cypress for both E2E and component testing. I only have some basic tests
+for the components as I started running out of time. I find it's better to at 
+least have the system setup to allow for more tests to be added later.
+
+I like using one testing library for everything so there is less setup and
+configuration to worry about. I find that using one testing library for
+everything makes it easier to get started with testing and requires less context
+switching.
+
+To open the test runner:
+
+```bash
+npm run cypress:open
+```
