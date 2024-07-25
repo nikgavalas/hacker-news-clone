@@ -20,7 +20,7 @@ export function useReadStories() {
   }, [setReadStories]);
 
   const addReadStory = useCallback(
-    (storyId: string) => {
+    (storyId: number) => {
       setReadStories((prevReadStories) => {
         const updatedReadStories = [...prevReadStories, storyId];
 

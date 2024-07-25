@@ -2,6 +2,7 @@ import { Link } from '@nextui-org/link';
 import clsx from 'clsx';
 import { Story } from '@/app/types';
 import { StoryStarred } from '@/components/story/story-starred';
+import { useReadStories } from '@/hooks/use-read-stories';
 
 interface StoryItemProps {
   className?: string;
@@ -16,7 +17,15 @@ export function StoryItem(props: StoryItemProps) {
   const { className, index, story } = props;
   const { comments_count, points, time_ago, user } = story;
 
+  const { addReadStory, readStories } = useReadStories();
+
+  const isRead = readStories.includes(story.id);
   const storyInfo = `${points} points by ${user} ${time_ago}`;
+
+  const handleStoryPress = () => {
+    // Add the story to the list of read stories.
+    addReadStory(story.id);
+  };
 
   return (
     <div className={clsx('flex flex-row gap-4', className)}>
@@ -25,8 +34,20 @@ export function StoryItem(props: StoryItemProps) {
       </div>
       <div className="flex flex-col gap-2">
         <div className="flex flex-col sm:flex-row gap-2 items-start sm:items-center">
-          <Link href={story.url} target="_blank" rel="noopener noreferrer">
-            <div className="font-bold font-mono text-lg text-default-foreground">
+          <Link
+            href={story.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            onPress={handleStoryPress}
+          >
+            <div
+              className={clsx(
+                'font-bold font-mono text-lg',
+                isRead
+                  ? 'text-default-foreground/50'
+                  : 'text-default-foreground',
+              )}
+            >
               {story.title}
             </div>
           </Link>
