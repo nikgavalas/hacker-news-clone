@@ -24,6 +24,9 @@ export const viewport: Viewport = {
   ],
 };
 
+/**
+ * Root layout component to wrap the entire application.
+ */
 export default function RootLayout({
   children,
 }: {

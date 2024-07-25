@@ -11,6 +11,10 @@ import { ThemeSwitch } from '@/components/theme-switch';
 
 interface NavBarProps {}
 
+/**
+ * The NavBar component for the application. Pretty basic and just has a logo
+ * and some menu to switch between latest and starred stories.
+ */
 export function NavBar(_props: NavBarProps) {
   return (
     <NextUINavbar maxWidth="xl" position="static">

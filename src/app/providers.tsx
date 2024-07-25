@@ -12,6 +12,9 @@ export interface ProvidersProps {
   themeProps?: ThemeProviderProps;
 }
 
+/**
+ * Providers to wrap the entire application.
+ */
 export function Providers({ children, themeProps }: ProvidersProps) {
   const router = useRouter();
 

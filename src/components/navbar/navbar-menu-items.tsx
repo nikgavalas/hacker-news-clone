@@ -7,7 +7,7 @@ import { useMenuOptionStarred } from '@/hooks/use-menu-option-starred';
 interface NavBarMenuItemsProps {}
 
 /**
- * @description The menu items for the NavBar used in both desktop and mobile.
+ * The menu items for the NavBar used in both desktop and mobile.
  */
 export function NavBarMenuItems(_props: NavBarMenuItemsProps) {
   const { isStarredSelected, setStarredSelection } = useMenuOptionStarred();

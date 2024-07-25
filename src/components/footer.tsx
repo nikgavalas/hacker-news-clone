@@ -9,7 +9,8 @@ interface FooterProps {
 }
 
 /**
- * @description Footer for our page.
+ * Footer for our page. Also allows switching between starred and latest
+ * stories.
  */
 export function Footer(props: FooterProps) {
   const { className } = props;

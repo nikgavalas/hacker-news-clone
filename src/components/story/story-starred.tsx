@@ -11,7 +11,7 @@ interface StoryStarredProps {
 }
 
 /**
- * @description Button to toggle the story as saved or not.
+ * Button to toggle the story as saved or not.
  */
 export function StoryStarred(props: StoryStarredProps) {
   const { className, story } = props;
