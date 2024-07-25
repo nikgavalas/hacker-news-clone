@@ -1,3 +1,5 @@
+'use client';
+
 import clsx from 'clsx';
 import { Story } from '@/app/types';
 import { StarFilledIcon, StarUnFilledIcon } from '@/components/icons';

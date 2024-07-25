@@ -25,13 +25,13 @@ export function NavBar(_props: NavBarProps) {
         </NavbarBrand>
         <ul className="hidden sm:flex gap-2 justify-center ml-8">
           <NavbarItem isActive>
-            <Link color="primary" href="#">
+            <Link color="primary" href="/">
               latest
             </Link>
           </NavbarItem>
           {' | '}
           <NavbarItem>
-            <Link color="foreground" href="#" aria-current="page">
+            <Link color="foreground" href="/?starred=true" aria-current="page">
               starred
             </Link>
           </NavbarItem>
@@ -40,13 +40,13 @@ export function NavBar(_props: NavBarProps) {
 
       <NavbarContent justify="start" className="flex sm:hidden">
         <NavbarItem isActive>
-          <Link color="primary" href="#">
+          <Link color="primary" href="/">
             latest
           </Link>
         </NavbarItem>
         {' | '}
         <NavbarItem>
-          <Link color="foreground" href="#" aria-current="page">
+          <Link color="foreground" href="/?starred=true" aria-current="page">
             starred
           </Link>
         </NavbarItem>
