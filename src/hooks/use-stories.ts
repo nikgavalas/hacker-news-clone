@@ -1,17 +1,5 @@
 import { useEffect, useState } from 'react';
-
-export type Story = {
-  comments_count: number;
-  domain: string;
-  id: number;
-  points: number | null;
-  time: number;
-  time_ago: string;
-  title: string;
-  type: string;
-  url: string;
-  user: string | null;
-};
+import { Story } from '@/app/types';
 
 /**
  * Hook that fetches stories from the API. It will also return a function

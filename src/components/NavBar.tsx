@@ -1,4 +1,3 @@
-import { Link } from '@nextui-org/link';
 import {
   Navbar as NextUINavbar,
   NavbarBrand,
@@ -7,6 +6,7 @@ import {
 } from '@nextui-org/navbar';
 import NextLink from 'next/link';
 import { Logo } from '@/components/Logo';
+import { NavBarMenuItems } from '@/components/NavBarMenuItems';
 import { ThemeSwitch } from '@/components/theme-switch';
 
 interface NavBarProps {}
@@ -24,32 +24,12 @@ export function NavBar(_props: NavBarProps) {
           </NextLink>
         </NavbarBrand>
         <ul className="hidden sm:flex gap-2 justify-center ml-8">
-          <NavbarItem isActive>
-            <Link color="primary" href="#">
-              latest
-            </Link>
-          </NavbarItem>
-          {' | '}
-          <NavbarItem>
-            <Link color="foreground" href="#" aria-current="page">
-              starred
-            </Link>
-          </NavbarItem>
+          <NavBarMenuItems />
         </ul>
       </NavbarContent>
 
       <NavbarContent justify="start" className="flex sm:hidden">
-        <NavbarItem isActive>
-          <Link color="primary" href="#">
-            latest
-          </Link>
-        </NavbarItem>
-        {' | '}
-        <NavbarItem>
-          <Link color="foreground" href="#" aria-current="page">
-            starred
-          </Link>
-        </NavbarItem>
+        <NavBarMenuItems />
       </NavbarContent>
 
       <NavbarContent
