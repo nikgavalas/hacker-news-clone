@@ -13,7 +13,7 @@ interface StoryListProps {
 }
 
 /**
- * @description Shows all the stories with infinite scroll to fetch more items.
+ * Shows all the stories with infinite scroll to fetch more items.
  */
 export function StoryList(props: StoryListProps) {
   const { className } = props;

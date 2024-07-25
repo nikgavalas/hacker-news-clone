@@ -12,6 +12,9 @@ export interface ThemeSwitchProps {
   classNames?: SwitchProps['classNames'];
 }
 
+/**
+ * A switch to toggle between light and dark themes.
+ */
 export function ThemeSwitch({
   className,
   classNames,

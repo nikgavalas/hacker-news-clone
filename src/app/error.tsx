@@ -2,6 +2,9 @@
 
 import { useEffect } from 'react';
 
+/**
+ * Error component to display when an error occurs.
+ */
 export default function Error({
   error,
   reset,

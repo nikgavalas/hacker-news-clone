@@ -11,7 +11,7 @@ interface StoryItemProps {
 }
 
 /**
- * @description Main component for a story.
+ * Main component for a story.
  */
 export function StoryItem(props: StoryItemProps) {
   const { className, index, story } = props;
@@ -22,8 +22,8 @@ export function StoryItem(props: StoryItemProps) {
   const isRead = readStories.includes(story.id);
   const storyInfo = `${points} points by ${user} ${time_ago}`;
 
+  // Add the story to the list of read stories.
   const handleStoryPress = () => {
-    // Add the story to the list of read stories.
     addReadStory(story.id);
   };
 

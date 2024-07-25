@@ -1,6 +1,9 @@
 import React from 'react';
 import { IconSvgProps } from '@/app/types';
 
+/**
+ * Logo of the application.
+ */
 export function Logo({ height, size = 36, width, ...props }: IconSvgProps) {
   return (
     <svg

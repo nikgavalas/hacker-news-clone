@@ -1,6 +1,9 @@
 import * as React from 'react';
 import { IconSvgProps } from '@/app/types';
 
+/**
+ * Moon filled icon for dark mode.
+ */
 export function MoonFilledIcon({
   height,
   size = 24,
@@ -25,6 +28,9 @@ export function MoonFilledIcon({
   );
 }
 
+/**
+ * Sun filled icon for light mode.
+ */
 export function SunFilledIcon({
   height,
   size = 24,
@@ -49,6 +55,9 @@ export function SunFilledIcon({
   );
 }
 
+/**
+ * Star filled icon for when a story is saved.
+ */
 export function StarFilledIcon({
   height,
   size = 24,
@@ -73,6 +82,9 @@ export function StarFilledIcon({
   );
 }
 
+/**
+ * Star unfilled icon for when a story is not saved.
+ */
 export function StarUnFilledIcon({
   height,
   size = 24,
