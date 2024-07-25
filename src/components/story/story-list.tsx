@@ -3,6 +3,7 @@
 import { useEffect } from 'react';
 import { Button } from '@nextui-org/button';
 import clsx from 'clsx';
+import { Story } from '@/app/types';
 import { StoryItem } from '@/components/story/story-item';
 import { useMenuOptionStarred } from '@/hooks/use-menu-option-starred';
 import { useStarredStories } from '@/hooks/use-starred';
@@ -28,7 +29,7 @@ export function StoryList(props: StoryListProps) {
   }, [isStarredSelected]);
 
   const displayedStories = isStarredSelected
-    ? Object.values(starredStories)
+    ? sortStarredStories(starredStories)
     : stories;
 
   console.log('displayedStories', displayedStories);
@@ -49,4 +50,22 @@ export function StoryList(props: StoryListProps) {
       )}
     </div>
   );
+}
+
+/**
+ * Sort the starred stories by points and then by time.
+ */
+function sortStarredStories(stories: Record<string, Story>) {
+  // Sort the stories first by points and then if there is a tie, by time.
+  // This is so the starred stories show up in the same order as the latest
+  // feed.
+  return Object.values(stories).sort((a, b) => {
+    const aPoints = a.points || 0;
+    const bPoints = b.points || 0;
+
+    if (aPoints === bPoints) {
+      return b.time - a.time;
+    }
+    return bPoints - aPoints;
+  });
 }
