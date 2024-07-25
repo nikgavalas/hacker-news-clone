@@ -1,5 +1,8 @@
+'use client';
+
 import { Link } from '@nextui-org/link';
 import clsx from 'clsx';
+import { useMenuOptionStarred } from '@/hooks/use-menu-option-starred';
 
 interface FooterProps {
   className?: string;
@@ -10,6 +13,7 @@ interface FooterProps {
  */
 export function Footer(props: FooterProps) {
   const { className } = props;
+  const { isStarredSelected, setStarredSelection } = useMenuOptionStarred();
 
   return (
     <footer
@@ -22,21 +26,33 @@ export function Footer(props: FooterProps) {
         <p className="font-bold">Hacker News</p>
         <div className="flex flex-row">
           <Link
-            isExternal
             className="flex items-center gap-1 text-current"
-            href="#latest"
+            href="#"
             title="Latest"
+            onPress={() => setStarredSelection(false)}
           >
-            <p className="text-primary font-bold">latest</p>
+            <p
+              className={
+                isStarredSelected ? 'text-foreground' : 'text-primary text-bold'
+              }
+            >
+              latest
+            </p>
           </Link>
           <div className="mx-2">|</div>
           <Link
-            isExternal
             className="flex items-center gap-1 text-current"
-            href="#latest"
+            href="#"
             title="Latest"
+            onPress={() => setStarredSelection(true)}
           >
-            <p className="text-foreground">starred</p>
+            <p
+              className={
+                isStarredSelected ? 'text-primary text-bold' : 'text-foreground'
+              }
+            >
+              starred
+            </p>
           </Link>
         </div>
       </div>
