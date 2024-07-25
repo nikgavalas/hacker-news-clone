@@ -1,6 +1,5 @@
 'use client';
 
-import { useEffect } from 'react';
 import { Button } from '@nextui-org/button';
 import clsx from 'clsx';
 import { Story } from '@/app/types';
@@ -22,17 +21,9 @@ export function StoryList(props: StoryListProps) {
   const { starredStories } = useStarredStories();
   const { isStarredSelected } = useMenuOptionStarred();
 
-  console.log('isStarredSelected', isStarredSelected);
-
-  useEffect(() => {
-    console.log('MenuComponent rendered', isStarredSelected);
-  }, [isStarredSelected]);
-
   const displayedStories = isStarredSelected
     ? sortStarredStories(starredStories)
     : stories;
-
-  console.log('displayedStories', displayedStories);
 
   return (
     <div className={clsx('flex flex-col gap-10', className)}>
