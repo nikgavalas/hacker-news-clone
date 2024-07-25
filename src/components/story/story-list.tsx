@@ -25,6 +25,8 @@ export function StoryList(props: StoryListProps) {
     ? sortStarredStories(starredStories)
     : stories;
 
+  const hasStories = displayedStories.length > 0;
+
   return (
     <div className={clsx('flex flex-col gap-10', className)}>
       <InfiniteScroll
@@ -39,9 +41,13 @@ export function StoryList(props: StoryListProps) {
         }
       >
         <div className="flex flex-col gap-6">
-          {displayedStories.map((story, index) => (
-            <StoryItem key={index} story={story} index={index} />
-          ))}
+          {hasStories &&
+            displayedStories.map((story, index) => (
+              <StoryItem key={index} story={story} index={index} />
+            ))}
+          {!hasStories && (
+            <p className="text-center text-gray-500">No stories to show.</p>
+          )}
         </div>
       </InfiniteScroll>
     </div>
