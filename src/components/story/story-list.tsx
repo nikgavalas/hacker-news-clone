@@ -33,7 +33,7 @@ export function StoryList(props: StoryListProps) {
       {!starred && (
         <div className="ml-14 mb-8">
           <Button color="primary" radius="none" onPress={fetchMore}>
-            show more
+            Show More
           </Button>
         </div>
       )}
