@@ -37,7 +37,14 @@ export function StoryItem(props: StoryItemProps) {
         <div className="flex flex-col sm:flex-row gap-2 text-default-foreground/50 text-xs">
           <div>{storyInfo}</div>
           <div className="hidden sm:flex">|</div>
-          <div>{comments_count} comments</div>
+          <Link
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-default-foreground/50 text-xs"
+            href={`https://news.ycombinator.com/item?id=${story.id}`}
+          >
+            <div>{comments_count} comments</div>
+          </Link>
           <div className="hidden sm:flex">|</div>
           <StoryStarred story={story} />
         </div>
