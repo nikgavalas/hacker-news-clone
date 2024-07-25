@@ -1,6 +1,6 @@
 'use client';
 
-import { Button } from '@nextui-org/button';
+import InfiniteScroll from 'react-infinite-scroll-component';
 import clsx from 'clsx';
 import { Story } from '@/app/types';
 import { StoryItem } from '@/components/story/story-item';
@@ -13,11 +13,11 @@ interface StoryListProps {
 }
 
 /**
- * @description Shows all the stories in addition to a fetch more button.
+ * @description Shows all the stories with infinite scroll to fetch more items.
  */
 export function StoryList(props: StoryListProps) {
   const { className } = props;
-  const { fetchMore, stories } = useStories();
+  const { fetchMore, hasMore, stories } = useStories(); // Make sure useStories hook returns hasMore
   const { starredStories } = useStarredStories();
   const { isStarredSelected } = useMenuOptionStarred();
 
@@ -27,18 +27,23 @@ export function StoryList(props: StoryListProps) {
 
   return (
     <div className={clsx('flex flex-col gap-10', className)}>
-      <div className="flex flex-col gap-6">
-        {displayedStories.map((story, index) => (
-          <StoryItem key={index} story={story} index={index} />
-        ))}
-      </div>
-      {!isStarredSelected && (
-        <div className="ml-14 mb-8">
-          <Button color="primary" radius="none" onPress={fetchMore}>
-            Show More
-          </Button>
+      <InfiniteScroll
+        dataLength={displayedStories.length}
+        next={fetchMore}
+        hasMore={hasMore}
+        loader={null}
+        endMessage={
+          <p className="py-10 ">
+            <b>Yay! You have seen it all! 🎉</b>
+          </p>
+        }
+      >
+        <div className="flex flex-col gap-6">
+          {displayedStories.map((story, index) => (
+            <StoryItem key={index} story={story} index={index} />
+          ))}
         </div>
-      )}
+      </InfiniteScroll>
     </div>
   );
 }
