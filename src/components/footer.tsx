@@ -33,9 +33,7 @@ export function Footer(props: FooterProps) {
           >
             <p
               className={
-                isStarredSelected
-                  ? 'text-foreground'
-                  : 'text-primary text-extra-bold'
+                isStarredSelected ? 'text-foreground' : 'text-primary text-bold'
               }
             >
               latest
@@ -50,9 +48,7 @@ export function Footer(props: FooterProps) {
           >
             <p
               className={
-                isStarredSelected
-                  ? 'text-primary text-extra-bold'
-                  : 'text-foreground'
+                isStarredSelected ? 'text-primary text-bold' : 'text-foreground'
               }
             >
               starred
