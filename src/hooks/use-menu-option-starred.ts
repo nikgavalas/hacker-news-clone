@@ -1,4 +1,4 @@
-import { useCallback, useEffect } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { useRecoilState } from 'recoil';
 import { isStarredSelectedState } from '@/recoil/starred-selected'; // Adjust the path as necessary
 
@@ -9,12 +9,14 @@ export function useMenuOptionStarred() {
   const [isStarredSelected, setIsStarredSelected] = useRecoilState(
     isStarredSelectedState,
   );
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const savedIsStarredSelected = localStorage.getItem('isStarredSelected');
     if (savedIsStarredSelected) {
       setIsStarredSelected(JSON.parse(savedIsStarredSelected));
     }
+    setLoading(false);
   }, [setIsStarredSelected]);
 
   const setStarredSelection = useCallback(
@@ -25,5 +27,5 @@ export function useMenuOptionStarred() {
     [setIsStarredSelected],
   );
 
-  return { isStarredSelected, setStarredSelection };
+  return { isStarredSelected, loading, setStarredSelection };
 }

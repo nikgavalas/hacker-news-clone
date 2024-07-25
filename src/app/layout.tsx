@@ -1,8 +1,7 @@
 import clsx from 'clsx';
 import { Metadata, Viewport } from 'next';
 import { Providers } from './providers';
-import { Footer } from '@/components/Footer';
-import { NavBar } from '@/components/NavBar';
+import { Main } from '@/components/Main';
 import { fontSans } from '@/config/fonts';
 import { siteConfig } from '@/config/site';
 import '@/styles/globals.css';
@@ -42,13 +41,7 @@ export default function RootLayout({
         <Providers
           themeProps={{ attribute: 'class', children, defaultTheme: 'dark' }}
         >
-          <div className="relative flex flex-col h-screen">
-            <NavBar />
-            <main className="container mx-auto max-w-7xl pt-4 sm:pt-10 px-0 sm:px-6 flex-grow">
-              {children}
-            </main>
-            <Footer />
-          </div>
+          <Main>{children}</Main>
         </Providers>
       </body>
     </html>
