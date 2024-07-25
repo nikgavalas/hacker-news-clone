@@ -28,7 +28,7 @@ export function NavBar(_props: NavBarProps) {
         </ul>
       </NavbarContent>
 
-      <NavbarContent justify="start" className="flex sm:hidden">
+      <NavbarContent justify="start" className="flex gap-2 sm:hidden">
         <NavBarMenuItems />
       </NavbarContent>
 
